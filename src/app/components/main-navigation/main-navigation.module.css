@@ -1,3 +1,10 @@
 .root {
     background-color: var(--color-white);
+    position: relative;
+}
+
+.links {
+    composes: cleanList from global;
+    display: flex;
+    gap: 10px;
 }
