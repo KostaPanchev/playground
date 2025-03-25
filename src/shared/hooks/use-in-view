@@ -1,0 +1,30 @@
+import { RefObject, useEffect, useState } from "react";
+
+// import { isBrowser } from "./browser.helper";
+
+type observerProps = {
+    threshold?: number | number[];
+    rootMargin?: string;
+};
+
+export function useInVew<T extends Element>(elRef: RefObject<T | null>, props?: observerProps) {
+    const { threshold = [0], rootMargin = "0px" } = props || {};
+    const [inView, setInView] = useState(false);
+
+    useEffect(() => {
+        const stickyObserver = new IntersectionObserver(
+            ([e]) => {
+                setInView(e.isIntersecting);
+            },
+            { threshold, rootMargin },
+        );
+
+        if (elRef?.current) {
+        // if (isBrowser && elRef?.current) {
+            stickyObserver.observe(elRef.current);
+        }
+        return () => stickyObserver.disconnect();
+    }, [elRef, threshold, rootMargin]);
+
+    return inView;
+}
