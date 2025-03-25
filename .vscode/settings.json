@@ -1,5 +1,5 @@
 {
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     "editor.insertSpaces": true,
     "files.autoSave": "onFocusChange",
     "editor.formatOnSave": true,
@@ -13,5 +13,8 @@
     },
     "[scss]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[postcss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
 }
