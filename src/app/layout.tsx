@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Head from 'next/head'
 import { Source_Code_Pro, Open_Sans, Audiowide } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header/header.component";
@@ -34,6 +35,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" >
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400;500;600;700&family=Material+Symbols+Rounded:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className={`${getRoboto.variable} ${getOpenSans.variable} ${getAudiowide.variable}`}>
         <Header />
         {children}
