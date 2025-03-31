@@ -1,0 +1,152 @@
+.root mark {
+  background-color: var(--color-attention);
+}
+
+.headlineSharedStyle {
+  margin: 0;
+  font-family: var(--font-family-headline);
+}
+
+.bodySharedStyle {
+  margin: 0;
+  font-family: var(--font-family-body);
+}
+
+.monospaceSharedStyle {
+  margin: 0;
+  font-family: var(--font-family-mono);
+}
+
+.display1 {
+  composes: headlineSharedStyle;
+  font-size: var(--font-size-h1);
+}
+
+.display2 {
+  composes: headlineSharedStyle;
+  font-size: var(--font-size-h2);
+}
+
+.display3 {
+  composes: headlineSharedStyle;
+  font-size: var(--font-size-h3);
+}
+
+.display4 {
+  composes: headlineSharedStyle;
+  font-size: var(--font-size-h4);
+}
+
+.display5 {
+  composes: headlineSharedStyle;
+  font-size: var(--font-size-h5);
+}
+
+.display6 {
+  composes: headlineSharedStyle;
+  font-size: var(--font-size-h6);
+}
+
+.bodyExtraLarge {
+  composes: bodySharedStyle;
+  font-size: var(--font-size-xl);
+}
+
+.bodyLarge {
+  composes: bodySharedStyle;
+  font-size: var(--font-size-lg);
+}
+
+.body {
+  composes: bodySharedStyle;
+  font-size: var(--font-size-md);
+  letter-spacing: 0;
+}
+
+.bodySmall {
+  composes: bodySharedStyle;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0;
+}
+
+.bodyExtraSmall {
+  composes: bodySharedStyle;
+  font-size: var(--font-size-xs);
+}
+
+.overflowEllipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Font weight */
+.light {
+  font-weight: var(--font-weight-light);
+}
+
+.regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.semiBold {
+  font-weight: var(--font-weight-semi-bold);
+}
+
+.bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Color */
+
+.bodyColor {
+  color: var(--body-color);
+}
+
+.primaryColor {
+  color: var(--color-primary-base);
+}
+
+.errorColor {
+  color: var(--color-danger);
+}
+
+.successColor {
+  color: var(--color-success);
+}
+
+.attentionColor {
+  color: var(--color-attention);
+}
+
+.natural700Color {
+  color: var(--color-neutral-700);
+}
+.neutralWhite {
+  color: var(--color-neutral-white);
+}
+
+.grey {
+  color: var(--color-grey-400);
+}
+
+/* Text align */
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.secondary {
+  color: var(--color-neutral-500);
+}
+
+.nowrap {
+  white-space: nowrap;
+}

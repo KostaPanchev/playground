@@ -1,0 +1,59 @@
+.root {
+  display: flex;
+  position: relative;
+  max-width: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.button {
+  composes: cleanButton from global;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  height: var(--spacing-7);
+  padding: var(--spacing-1) var(--spacing-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--color-neutral-700);
+  cursor: pointer;
+
+  &:hover:not([disabled]) {
+    background-color: var(--color-neutral-200);
+    color: var(--color-neutral-black);
+  }
+
+  &:focus {
+    outline: var(--color-focus);
+  }
+
+  &:disabled {
+    color: var(--color-neutral-400);
+  }
+}
+
+.activeButton {
+  composes: button;
+  color: var(--color-neutral-black);
+}
+
+.tabUnderline {
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--color-primary-base);
+  transition: width 0.3s ease, transform 0.3s ease;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  & path {
+    stroke: var(--color-neutral-black);
+  }
+}
+
+.iconRight {
+  order: 1;
+}
