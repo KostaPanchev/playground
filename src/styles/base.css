@@ -14,7 +14,7 @@ body {
 body {
   color: var(--color-foreground);
   background: var(--color-background);
-  font-family: "Source Code Pro", monospace;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
