@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Source_Code_Pro } from "next/font/google";
+import { Source_Code_Pro, Open_Sans, Audiowide } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header/header.component";
 
@@ -8,6 +8,19 @@ const getRoboto = Source_Code_Pro({
   weight: ["300", "400", "500", "700", "900"],
   subsets: ["latin"],
 });
+
+const getOpenSans = Open_Sans({
+  variable: "--font-body",
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
+
+const getAudiowide = Audiowide({
+  variable: "--font-headers",
+  weight: ["400"],
+  subsets: ["latin"],
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,8 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${getRoboto.variable}`}>
-      <body >
+    <html lang="en" >
+      <body className={`${getRoboto.variable} ${getOpenSans.variable} ${getAudiowide.variable}`}>
         <Header />
         {children}
       </body>

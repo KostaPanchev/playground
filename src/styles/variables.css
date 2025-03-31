@@ -39,9 +39,6 @@
   --color-foreground: var(--color-blue-gray-800);
   --color-primary: var(--color-primary-500);
 
-  --font-serif: "Georgia", serif;
-  --font-sans: var(--font-roboto);
-
   --spacing-00: 0;
   --spacing-01: 4px;
   --spacing-02: 8px;
