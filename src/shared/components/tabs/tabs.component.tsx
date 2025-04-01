@@ -6,37 +6,22 @@ import React, {
     ButtonHTMLAttributes,
 } from 'react';
 import clsx from 'clsx';
-import styles from './Tabs.module.css';
-import { IconTypes, SvgIcon } from '../../index';
+import styles from './tabs.module.css';
 
 
 export interface ITabButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     isActive?: boolean;
-    iconName?: IconTypes;
-    iconClassName?: string;
-    iconPosition?: 'left' | 'right';
     ref?: React.ForwardedRef<HTMLButtonElement>
 }
 
 export const TabButton: FC<ITabButtonProps> = forwardRef((props, ref) => {
-    const {
-        isActive, children,
-        iconName, iconClassName, iconPosition,
-        ...rest
-    } = props;
+    const { isActive, children, ...rest } = props;
     return (
         <button
             ref={ref}
             className={isActive ? styles.activeButton : styles.button}
             {...rest}
         >
-            {iconName && (
-                <SvgIcon
-                    name={iconName}
-                    className={clsx(styles.icon, iconClassName, {
-                        [styles.iconRight]: iconPosition === 'right'
-                    })} />
-            )}
             {children}
         </button>
     );
@@ -46,10 +31,12 @@ export const TabButton: FC<ITabButtonProps> = forwardRef((props, ref) => {
 interface IProps {
     children: ReactElement<ITabButtonProps>[];
     className?: string;
-    underLineWidth?: number;
+    underlineThickness?: number;
 }
 
-export const Tabs: FC<IProps> = ({ children, className }) => {
+export const Tabs: FC<IProps> = (props) => {
+    const { children, className, underlineThickness = 2 } = props;
+
     const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
     const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
 
@@ -75,6 +62,7 @@ export const Tabs: FC<IProps> = ({ children, className }) => {
                 className={styles.tabUnderline}
                 style={{
                     width: `${tabUnderlineWidth}px`,
+                    height: `${underlineThickness}px`,
                     transform: `translateX(${tabUnderlineLeft}px)`
                 }}
             />

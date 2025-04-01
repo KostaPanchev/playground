@@ -11,16 +11,12 @@
   composes: cleanButton from global;
   display: inline-flex;
   align-items: center;
-  gap: var(--spacing-2);
-  height: var(--spacing-7);
-  padding: var(--spacing-1) var(--spacing-4);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semi-bold);
-  color: var(--color-neutral-700);
+  gap: var(--spacing-02);
+  padding: var(--spacing-03) var(--spacing-04);
+  color: var(--color-blue-gray-800);
   cursor: pointer;
 
   &:hover:not([disabled]) {
-    background-color: var(--color-neutral-200);
     color: var(--color-neutral-black);
   }
 
@@ -34,26 +30,15 @@
 }
 
 .activeButton {
+  composes: cleanButton from global;
   composes: button;
-  color: var(--color-neutral-black);
+  color: var(--color-primary-700);
 }
 
 .tabUnderline {
-  height: 2px;
   position: absolute;
+  border-radius: 2px;
   bottom: 0;
-  background-color: var(--color-primary-base);
+  background-color: var(--color-primary-700);
   transition: width 0.3s ease, transform 0.3s ease;
-}
-
-.icon {
-  width: 24px;
-  height: 24px;
-  & path {
-    stroke: var(--color-neutral-black);
-  }
-}
-
-.iconRight {
-  order: 1;
 }

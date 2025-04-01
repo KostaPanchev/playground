@@ -1,9 +1,10 @@
 import React, { createRef, FC, HTMLAttributes, memo, ReactNode, useCallback, useEffect, useRef } from "react";
 import styles from "./modal.module.css";
 import Button from "../button/button.component";
+import clsx from 'clsx';
 
 
-export type ModalVariants = "drawerRight" | "drawerLeft" | "modal";
+export type ModalVariant = "drawerRight" | "drawerLeft" | "modal";
 
 type Props = HTMLAttributes<HTMLDialogElement> & {
 	isOpen: boolean;
@@ -12,7 +13,7 @@ type Props = HTMLAttributes<HTMLDialogElement> & {
 	footer?: ReactNode;
 	onOpenCallback?: () => void;
 	onCloseCallback?: () => void;
-	variant?: ModalVariants;
+	variant?: ModalVariant;
 	disableClickOutsideToClose?: boolean;
 	removeCloseButton?: boolean;
 };
@@ -80,17 +81,20 @@ const Modal: FC<Props> = memo((props) => {
 	}, [disableClickOutsideToClose, handleOutsideClick, modalRef, onClose]);
 
 	return (
-		<dialog className={styles.root} ref={modalRef} {...rest}>
+		<dialog className={clsx(
+			styles.root,
+			styles[`${variant}Styles`],
+		)} ref={modalRef} {...rest}>
 			<div className={styles.content} data-modal-content>
 				<div data-modal-header>
 					<div>{header}</div>
 					{!removeCloseButton && (
 						<Button onClick={() => onClose()}>
-							x
+							<span className="material-symbols-outlined">close</span>
 						</Button>
 					)}
 				</div>
-				<div data-modal-main>{children}</div>
+				<div data-modal-content>{children}</div>
 				{footer && <div data-modal-footer>{footer}</div>}
 			</div>
 		</dialog>

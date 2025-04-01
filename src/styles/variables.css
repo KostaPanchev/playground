@@ -36,8 +36,11 @@
   --color-blue-gray-900: #263238;
 
   --color-background: var(--color-blue-gray-50);
-  --color-foreground: var(--color-blue-gray-800);
+  --color-foreground: var(--color-blue-gray-900);
   --color-primary: var(--color-primary-500);
+  --color-border: var(--color-gray-300);
+  --color-border-dark: var(--color-gray-600);
+  --color-overlay: rgba(0, 0, 0, 0.2);
 
   --spacing-00: 0;
   --spacing-01: 4px;
@@ -50,6 +53,7 @@
   --spacing-08: 32px;
   --spacing-09: 36px;
   --spacing-10: 40px;
+  --spacing-20: 80px;
 
   --container--max-width: 1280px;
 

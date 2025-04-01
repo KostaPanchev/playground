@@ -1,0 +1,8 @@
+.section {
+  margin-block: var(--spacing-10);
+  padding: var(--spacing-05);
+  /* border: 1px solid var(--color-border); */
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-3);
+  /* background-color: red; */
+}
