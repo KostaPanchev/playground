@@ -1,7 +1,7 @@
 import React, { createRef, FC, HTMLAttributes, memo, ReactNode, useCallback, useEffect, useRef } from "react";
 import styles from "./modal.module.css";
-import Button from "../button/button.component";
 import clsx from 'clsx';
+import Button from "../button/button.component";
 
 
 export type ModalVariant = "drawerRight" | "drawerLeft" | "modal";

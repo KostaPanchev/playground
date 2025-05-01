@@ -2,7 +2,7 @@
 import React, { FC } from 'react'
 import Modal, { ModalVariant } from '~/shared/components/modal/modal.component';
 import styles from './ui-elements.module.css';
-import { TabButton, Tabs } from '~/shared/components/tabs/tabs.component';
+import { Tabs, TabButton } from '~/shared/components/tabs/tabs.component';
 
 type Props = {
 	prop?: any;
