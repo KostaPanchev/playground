@@ -1,21 +1,21 @@
-import React, { FC, HTMLAttributes, ReactNode } from 'react'
-// import styles from './Button.module.css'
+import type { ComponentPropsWithoutRef, ElementType } from 'react';
 
 type Variant = 'primary' | 'secondary' | 'tertiary'
 
-type Props = HTMLAttributes<HTMLButtonElement> & {
+type ButtonProps<T extends ElementType> = {
+  As?: T;
   variant?: Variant;
-  children?: ReactNode;
+} & ComponentPropsWithoutRef<T>
+
+const DEFAULT_TYPE = 'button';
+function Button<T extends ElementType = typeof DEFAULT_TYPE>(props: ButtonProps<T>) {
+  const { As, variant = 'primary', ...restProps } = props;
+  const Component = As ?? DEFAULT_TYPE;
+
+  console.log(typeof DEFAULT_TYPE)
+  console.log('Button', { variant });
+
+  return <Component {...restProps} />;
 }
 
-const Button: FC<Props> = ({ variant, children, ...rest }) => {
-  console.log('Button', variant)
-  // TODO: Implement variant styles
-
-
-  return (
-    <button {...rest}>{children}</button>
-  )
-}
-
-export default Button
+export default Button;

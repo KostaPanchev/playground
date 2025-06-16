@@ -5,13 +5,11 @@
 }
 
 .cleanButton {
-  text-align: left;
-  width: auto;
   appearance: none;
+  background: transparent;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
   border: none;
-  background-color: transparent;
-
-  &:focus {
-    outline: none;
-  }
+  border-radius: 0;
+  padding: 0;
 }
